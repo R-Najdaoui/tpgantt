@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Gantt Exercices 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Tableau des tâches</h2>
+
+<table class="task-table">
+    <tr>
+        <th>Tâche</th>
+        <th>Durée (h)</th>
+        <th>Antériorité</th>
+        <th>Postérieur</th>
+        <th>Début</th>
+        <th>Fin</th>
+    </tr>
+    <tr><td>A</td><td>4</td><td>-</td><td>C</td><td>0</td><td>4</td></tr>
+    <tr><td>B</td><td>2</td><td>-</td><td>D</td><td>0</td><td>2</td></tr>
+    <tr><td>C</td><td>2</td><td>A</td><td>G</td><td>4</td><td>6</td></tr>
+    <tr><td>D</td><td>0.25</td><td>B</td><td>-</td><td>2</td><td>2.25</td></tr>
+    <tr><td>F</td><td>1.5</td><td>-</td><td>E</td><td>0</td><td>1.5</td></tr>
+    <tr><td>E</td><td>3</td><td>F</td><td>H</td><td>1.5</td><td>4.5</td></tr>
+    <tr><td>G</td><td>2.5</td><td>C</td><td>I</td><td>6</td><td>8.5</td></tr>
+    <tr><td>H</td><td>10</td><td>E</td><td>I</td><td>4.5</td><td>14.5</td></tr>
+    <tr><td>I</td><td>1.5</td><td>G,H</td><td>-</td><td>8.5</td><td>10</td></tr>
+</table>
+
+<h2>Diagramme de Gantt</h2>
+
+<table class="gantt">
+    <tr>
+        <th>Tâche</th>
+        <!-- Cases : 0 à 10 h, 0.25 h par case → 40 cases -->
+        <script>
+            for(let i=0;i<=40;i++){
+                document.write("<th>"+(i*0.25)+"</th>");
+            }
+        </script>
+    </tr>
+
+    <!-- A -->
+    <tr>
+        <td class="label">A</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=0 && i<16) document.write("<td class='a'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- B -->
+    <tr>
+        <td class="label">B</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=0 && i<8) document.write("<td class='b'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- C -->
+    <tr>
+        <td class="label">C</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=16 && i<24) document.write("<td class='c'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- D -->
+    <tr>
+        <td class="label">D</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=8 && i<9) document.write("<td class='d'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- F -->
+    <tr>
+        <td class="label">F</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=0 && i<6) document.write("<td class='f'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- E -->
+    <tr>
+        <td class="label">E</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=6 && i<18) document.write("<td class='e'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- G -->
+    <tr>
+        <td class="label">G</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=24 && i<34) document.write("<td class='g'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- H -->
+    <tr>
+        <td class="label">H</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=18 && i<58) document.write("<td class='h'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- I -->
+    <tr>
+        <td class="label">I</td>
+        <script>
+            for(let i=0;i<=40;i++){
+                if(i>=34 && i<40) document.write("<td class='i'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+</table>
+
+<p class="chemin">Le chemin critique : A → C → G → I et B → D</p>
+
+</body>
+</html>

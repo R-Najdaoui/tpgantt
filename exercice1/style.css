@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.task-table {
+    border-collapse: collapse;
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.task-table th, .task-table td {
+    border: 1px solid #aaa;
+    padding: 5px;
+    text-align: center;
+}
+
+.gantt {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.gantt th, .gantt td {
+    border: 1px solid #ddd;
+    width: 20px; 
+    height: 20px;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+.label {
+    font-weight: bold;
+    width: 40px !important;
+}
+
+/* Couleurs */
+.a { background-color: #4CAF50; }
+.b { background-color: #2196F3; }
+.c { background-color: #FF9800; }
+.d { background-color: #9C27B0; }
+.e { background-color: #F44336; }
+.f { background-color: #009688; }
+.g { background-color: #3F51B5; }
+.h { background-color: #795548; }

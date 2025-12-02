@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.task-table {
+    border-collapse: collapse;
+    width: 70%;
+    margin-bottom: 40px;
+}
+.task-table th, .task-table td {
+    border: 1px solid #aaa;
+    padding: 6px;
+    text-align: center;
+}
+
+/* DIAGRAMME GANTT */
+.gantt {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.gantt th, .gantt td {
+    border: 1px solid #ddd;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.label {
+    width: 40px !important;
+    font-weight: bold;
+}
+
+.crit {
+    background-color: #d32f2f !important; /* rouge foncé */
+}
+
+/* Couleur tâche non critique */
+.c { background-color: #FF9800; }
+
+/* Texte chemin critique */
+.chemin {
+    font-weight: bold;
+    margin-top: 15px;
+}

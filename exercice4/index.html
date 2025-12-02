@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<title>Diagramme de Gantt Exercice 4</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<h2>Tableau des tâches</h2>
+
+<table class="task-table">
+  <thead>
+    <tr>
+      <th>Tâche</th>
+      <th>Durée (jours)</th>
+      <th>Antériorité(s)</th>
+      <th>Début</th>
+      <th>Fin</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>A</td><td>3</td><td>aucune</td><td>0</td><td>3</td></tr>
+    <tr><td>H</td><td>5</td><td>aucune</td><td>0</td><td>5</td></tr>
+    <tr><td>B</td><td>1</td><td>A</td><td>3</td><td>4</td></tr>
+    <tr><td>C</td><td>5</td><td>A</td><td>3</td><td>8</td></tr>
+    <tr><td>I</td><td>8</td><td>H</td><td>5</td><td>13</td></tr>
+    <tr><td>J</td><td>2</td><td>H</td><td>5</td><td>7</td></tr>
+    <tr><td>D</td><td>6</td><td>B</td><td>4</td><td>10</td></tr>
+    <tr><td>E</td><td>4</td><td>B</td><td>4</td><td>8</td></tr>
+    <tr><td>K</td><td>3</td><td>I</td><td>13</td><td>16</td></tr>
+    <tr><td>F</td><td>2</td><td>C, I, D</td><td>13</td><td>15</td></tr>
+    <tr><td>G</td><td>9</td><td>E, F</td><td>15</td><td>24</td></tr>
+    <tr><td>L</td><td>7</td><td>J, K</td><td>16</td><td>23</td></tr>
+  </tbody>
+</table>
+
+<h2>Diagramme de Gantt</h2>
+
+<table class="gantt">
+  <tr>
+    <th>Tâche</th>
+    <!-- jours de 0 à 24 -->
+    <script>
+      for(let i=0; i<=24; i++){
+        document.write('<th>' + i + '</th>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">A</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=0 && i<3) document.write('<td class="a"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">H</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=0 && i<5) document.write('<td class="h"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">B</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=3 && i<4) document.write('<td class="b"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">C</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=3 && i<8) document.write('<td class="c"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">I</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=5 && i<13) document.write('<td class="i"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">J</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=5 && i<7) document.write('<td class="j"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">D</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=4 && i<10) document.write('<td class="d"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">E</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=4 && i<8) document.write('<td class="e"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">K</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=13 && i<16) document.write('<td class="k"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">F</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=13 && i<15) document.write('<td class="f"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">G</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=15 && i<24) document.write('<td class="g"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+
+  <tr><td class="label">L</td>
+    <script>
+      for(let i=0; i<=24; i++){
+        if(i>=16 && i<23) document.write('<td class="l"></td>');
+        else document.write('<td></td>');
+      }
+    </script>
+  </tr>
+</table>
+
+<p class="chemin">Le chemin critique : A → C → F → G → L</p>
+
+</body>
+</html>

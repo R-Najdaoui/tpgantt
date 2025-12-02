@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagramme de Gantt + chemin critique exercice 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Tableau des tâches</h2>
+
+<table class="task-table">
+    <tr>
+        <th>Tâche</th>
+        <th>Durée</th>
+        <th>Prédécesseur</th>
+        <th>Début</th>
+        <th>Fin</th>
+    </tr>
+    <tr><td>A</td><td>2</td><td>-</td><td>0</td><td>2</td></tr>
+    <tr><td>B</td><td>7</td><td>A</td><td>2</td><td>9</td></tr>
+    <tr><td>C</td><td>3</td><td>A</td><td>2</td><td>5</td></tr>
+    <tr><td>D</td><td>10</td><td>B, C</td><td>9</td><td>19</td></tr>
+    <tr><td>E</td><td>4</td><td>B</td><td>9</td><td>13</td></tr>
+    <tr><td>F</td><td>6</td><td>E</td><td>13</td><td>19</td></tr>
+    <tr><td>G</td><td>3</td><td>D, F</td><td>19</td><td>22</td></tr>
+</table>
+
+<h2>Diagramme de Gantt</h2>
+
+<table class="gantt">
+    <tr>
+        <th>Tâche</th>
+        <!-- Jours de 0 à 22 -->
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                document.write("<th>" + i + "</th>");
+            }
+        </script>
+    </tr>
+
+    <!-- A -->
+    <tr>
+        <td class="label">A</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                let critical = (i >= 0 && i < 2);
+                if(critical) document.write("<td class='crit'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- B -->
+    <tr>
+        <td class="label">B</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                let critical = (i >= 2 && i < 9);
+                if(critical) document.write("<td class='crit'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- C -->
+    <tr>
+        <td class="label">C</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                if(i >= 2 && i < 5) document.write("<td class='c'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- D -->
+    <tr>
+        <td class="label">D</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                let critical = (i >= 9 && i < 19);
+                if(critical) document.write("<td class='crit'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- E -->
+    <tr>
+        <td class="label">E</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                let critical = (i >= 9 && i < 13);
+                if(critical) document.write("<td class='crit'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- F -->
+    <tr>
+        <td class="label">F</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                let critical = (i >= 13 && i < 19);
+                if(critical) document.write("<td class='crit'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- G -->
+    <tr>
+        <td class="label">G</td>
+        <script>
+            for (let i = 0; i <= 22; i++) {
+                let critical = (i >= 19 && i < 22);
+                if(critical) document.write("<td class='crit'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+</table>
+
+<p class="chemin">Le chemin critique : A → B → D → G et A → B → E → F → G</p>
+
+</body>
+</html>

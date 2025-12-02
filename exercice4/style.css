@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.task-table {
+  border-collapse: collapse;
+  width: 95%;
+  margin-bottom: 40px;
+}
+
+.task-table th, .task-table td {
+  border: 1px solid #aaa;
+  padding: 6px;
+  text-align: center;
+}
+
+.gantt {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.gantt th, .gantt td {
+  border: 1px solid #ddd;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.label {
+  width: 30px !important;
+  font-weight: bold;
+}
+
+.a { background-color: #4CAF50; }
+.b { background-color: #2196F3; }
+.c { background-color: #FF9800; }
+.d { background-color: #9C27B0; }
+.e { background-color: #F44336; }
+.f { background-color: #009688; }
+.g { background-color: #3F51B5; }
+.h { background-color: #795548; }
+.i { background-color: #FFC107; }
+.j { background-color: #E91E63; }
+.k { background-color: #00BCD4; }
+.l { background-color: #FF5722; }
+
+.chemin {
+  font-weight: bold;
+  margin-top: 15px;
+}

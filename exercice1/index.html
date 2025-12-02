@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Diagramme de Gantt exercice 1 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Tableau des tâches</h2>
+
+<table class="task-table">
+    <tr>
+        <th>Tâche</th>
+        <th>Durée</th>
+        <th>Prédécesseur</th>
+        <th>Successeur</th>
+        <th>Début</th>
+        <th>Fin</th>
+    </tr>
+    <tr><td>A</td><td>5</td><td>-</td><td>B, C</td><td>0</td><td>5</td></tr>
+    <tr><td>B</td><td>9</td><td>A</td><td>D</td><td>5</td><td>14</td></tr>
+    <tr><td>C</td><td>7</td><td>A</td><td>E</td><td>5</td><td>12</td></tr>
+    <tr><td>D</td><td>14</td><td>B</td><td>F</td><td>14</td><td>28</td></tr>
+    <tr><td>E</td><td>8</td><td>C</td><td>F</td><td>12</td><td>20</td></tr>
+    <tr><td>F</td><td>7</td><td>D, E</td><td>G</td><td>28</td><td>35</td></tr>
+    <tr><td>G</td><td>9</td><td>F</td><td>H</td><td>35</td><td>44</td></tr>
+    <tr><td>H</td><td>10</td><td>G</td><td>-</td><td>44</td><td>54</td></tr>
+</table>
+
+<h2>Diagramme de Gantt</h2>
+
+<table class="gantt">
+    <tr>
+        <th>Tâche</th>
+
+        <!-- Génération automatique des jours -->
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                document.write("<th>" + i + "</th>");
+            }
+        </script>
+    </tr>
+
+    <!-- A -->
+    <tr>
+        <td class="label">A</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 0 && i < 5) document.write("<td class='a'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- B -->
+    <tr>
+        <td class="label">B</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 5 && i < 14) document.write("<td class='b'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- C -->
+    <tr>
+        <td class="label">C</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 5 && i < 12) document.write("<td class='c'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- D -->
+    <tr>
+        <td class="label">D</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 14 && i < 28) document.write("<td class='d'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- E -->
+    <tr>
+        <td class="label">E</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 12 && i < 20) document.write("<td class='e'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- F -->
+    <tr>
+        <td class="label">F</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 28 && i < 35) document.write("<td class='f'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- G -->
+    <tr>
+        <td class="label">G</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 35 && i < 44) document.write("<td class='g'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+    <!-- H -->
+    <tr>
+        <td class="label">H</td>
+        <script>
+            for (let i = 0; i <= 54; i++) {
+                if(i >= 44 && i < 54) document.write("<td class='h'></td>");
+                else document.write("<td></td>");
+            }
+        </script>
+    </tr>
+
+</table>
+
+</body>
+</html>
